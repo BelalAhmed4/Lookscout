@@ -1,0 +1,90 @@
+/* *Global */
+*{
+/* outline: solid 1px #272d373d; */
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: "Inter", sans-serif;
+}
+/* MQ */
+/* Base font size for small screens */
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    html {
+        font-size: 12px;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+/* *Container */
+.container{
+  margin: 0 auto;
+}
+/* MQ */
+/* -> Extra Small */
+@media (max-width: 576px) { 
+  .container{
+  width: 95vw;
+}
+}
+/* -> Small */
+@media (min-width: 576px) and (max-width:767px) {
+  .container{
+  width: 93vw;
+}
+}
+/* -> Medium */
+@media (min-width: 768px) and (max-width:991px) {
+  .container{
+  width: 91vw;
+}
+}
+/* -> Large */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container{
+  width: 89vw;
+}
+}
+/* - Extra Large */
+@media (min-width: 1200px){
+  .container{
+  width: 1140px;
+}
+}
+/* *Grid System */
+.grid-col-12{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+}
+.grid-col-6{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+}
+/* *Flex System */
+.flex{
+  display: flex;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}

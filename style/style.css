@@ -1,0 +1,496 @@
+/******* - START - *******/
+/* *Global */
+::selection{
+  color: var(--lightClr);
+  background-color: var(--lightMainClr);
+}
+/* *Root */
+:root{
+  --mainClr:#2b63d9;
+  --lightMainClr:#2b63d9cc;
+  --lightFontClr:#b1ccfb;
+  --lightClr:#ffffff;
+  --darkFontClr:#272d37;
+  --grayText:#5F6D7E;
+  --lightGrey:#D9D9D9;
+}
+/* *Repeated Styling */
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.active{
+  font-weight: bold;
+}
+.repeatedBtn{
+    border-radius: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0.6rem;
+    font-weight: 500;
+    transition: 0.3s all ease;
+    font-weight: bold;
+}
+.repeatedBtn.blue{
+  color: var(--lightClr);
+  background-color: var(--mainClr);
+}
+.repeatedBtn.blue:hover{
+  background-color: var(--lightMainClr);
+}
+.repeatedBtn.white{
+  background-color: var(--lightClr);
+  color: var(--mainClr);
+}
+.repeatedBtn.white{
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.repeatedBtn.white::before{
+    transition: 0.3s ease all;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  opacity: 0;
+  background-color: var(--lightMainClr);
+position: absolute;
+}
+.repeatedBtn.white:hover{
+  color: #fff;
+ background-color: transparent;
+}
+.repeatedBtn.white:hover::before{
+  opacity: 1;
+  z-index: -1;
+  left: 0;
+  right: 0;
+}
+/******* - New Section - *******/
+/* *Header */
+header{
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  padding-block: 1.6rem;
+}
+header .logo-menu{
+  align-items: center;
+}
+header .logo-menu .logo{
+width: 11rem;
+}
+header .container{
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .logo-menu ul {
+  align-items: center;
+  margin-left: 3.1rem;
+}
+header .container .logo-menu ul a{
+  color: var(--darkClr);
+    margin-left: 1.5rem;
+    position: relative;
+}
+header .container .logo-menu ul a::before{
+  position: absolute;
+  content: "";
+  bottom: -0.5rem;
+background-color: var(--darkFontClr);
+width: 0%;
+  height: 0.2rem;
+  left: 0;
+  transition: all .3s ease;
+  border-radius: 0.5rem;
+}
+header .container .logo-menu ul a:hover::before{
+  width: 100%;
+}
+header .container .sign-icon{
+  align-items: center;
+  gap: 0.5rem;
+}
+header .container .sign-icon .signBox{
+  gap: 0.5rem;
+}
+header .container .sign-icon .signBox .repeatedBtn{
+     width: 5rem;
+    height: 2.6rem;
+}
+header .container .sign-icon .bars-icon{
+display: none;
+cursor: pointer;
+}
+/* Header MQ */
+@media (max-width: 767px) { 
+  header .logo-menu ul{
+  display: none;
+}
+header .sign-icon a{
+  display: none;
+}
+header .container .sign-icon .bars-icon{
+display: block;
+}
+}
+/******* - New Section - *******/
+/* *Main */
+.hero{
+  gap: 1.1rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.hero span{
+  color: var(--mainClr);
+  font-weight: bold;
+}
+.hero h1{
+  line-height: 1.3;
+  color: var(--darkFontClr);
+  max-width: 21rem;
+}
+/******* - New Section - *******/
+/* *Subscribe & Features Section */
+/* Subscribe Container */
+.subscribe_features .subscribeContainer{
+  align-items: center;
+    margin-block: 1.6rem;
+    background-color: var(--lightMainClr);
+    padding: 3.3rem 0.5rem;
+} 
+.subscribe_features .subscribeContainer .container{
+  align-items: center;
+  gap:1.6rem;
+}
+/* Subscribe Container => Text box */
+.subscribe_features .subscribeContainer .textBox h2{
+  color: var(--lightClr);
+  margin-bottom: 0.9rem;
+} 
+.subscribe_features .subscribeContainer .textBox p{
+  color: var(--lightFontClr);
+  line-height: 1.5;
+      font-size: 0.8rem;
+} 
+/* Subscribe Container => Subscribe Box */
+/* Subscribe Container => Subscribe Box => Input Field Holder */
+.subscribeBox .inputFieldHolder .inputBox{
+  position: relative;
+  flex-grow: 1;
+}
+.subscribeBox .inputFieldHolder .inputBox:before{
+    position: absolute;
+    content: "Enter Your Email";
+    color: var(--grayText);
+    top: 50%;
+    left: 1.1rem;
+    transform: translate(0%, -50%);
+}
+.subscribeBox .inputFieldHolder input{
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+}
+.subscribeBox .repeatedBtn:hover{
+  letter-spacing: .1rem;
+}
+.subscribe_features .subscribeContainer .subscribeBox {
+position: relative;
+}
+/* Subscribe & Features => Features */
+.subscribe_features .features{
+  gap: 1.6rem;
+}
+.subscribe_features .features .bigCard{
+  flex-basis: 50%;
+  gap: 0.6rem;
+}
+.subscribe_features .features .smallCards{
+  flex-basis: 50%;
+  gap: 1.1rem;
+}
+.subscribe_features .features .card{
+  flex-direction: column;
+  grid-column: span 12;
+  gap: 0.6rem;
+}
+.subscribe_features .features .cardTxt h5{
+color: var(--grayText);
+margin-top:0.8rem;
+font-weight: 500;
+}
+.subscribe_features .features .smallCards h4 {
+  color: var(--darkFontClr);
+  margin-block: 0.3rem 0.6rem;
+}
+.subscribe_features .features .bigCard h4 {
+  color: var(--darkFontClr);
+  margin-block: 0.3rem 0.6rem;
+  line-height: 1.5;
+}
+.subscribe_features .features p {
+color: var(--grayText);
+margin-bottom: 0.5rem;
+}
+/* MQ */
+@media (max-width: 768px) {
+/* Subscribe Container => Subscribe Container*/
+  .subscribe_features{
+    flex-direction: column-reverse;
+  }
+.subscribe_features .subscribeContainer .textBox{
+grid-column: span 12;
+}
+.subscribe_features .subscribeContainer .container .subscribeBox{
+  grid-column:span 12 ;
+}
+.subscribe_features .subscribeContainer .container .subscribeBox .inputFieldHolder{
+flex-direction: column;
+}
+.subscribe_features .subscribeContainer .container .subscribeBox .inputFieldHolder .repeatedBtn{
+  height: 3.2rem;
+  margin-top: 1.1rem;
+}
+.subscribe_features .subscribeContainer .container .subscribeBox .inputFieldHolder .inputBox::before{
+content: "Your e-mail...";
+}
+.subscribe_features .features{
+  flex-direction: column;
+}
+}
+@media (min-width: 769px) {
+   .subscribeBox .repeatedBtn{
+    border-top-left-radius:unset;
+    border-bottom-left-radius: unset;
+   }
+  .subscribeBox .inputFieldHolder input{
+     border-top-right-radius:unset;
+    border-bottom-right-radius: unset;
+   }
+   .subscribe_features .subscribeContainer .container .subscribeBox::before{
+        content: "Subscribe to our newsletter";
+        position: absolute;
+        bottom: -1.3rem;
+        color: var(--lightFontClr);
+        font-size: 0.8rem;
+   }
+  .subscribe_features .subscribeContainer .container .textBox{
+grid-column: span 7;
+}
+.subscribe_features .subscribeContainer .subscribeBox{
+  grid-column:span 5 ;
+}
+/* Subscribe Container - Features Section*/
+.subscribe_features .features .bigCard img{
+  border-radius: 0.8rem;
+    object-position: center;
+    object-fit: cover;
+
+    max-height: 13.3rem;
+}
+.subscribe_features .features .card{
+  flex-direction: row;
+  align-items:flex-start;
+}
+}
+/******* - New Section - *******/
+/* *Latest Blog Posts Section */
+.latestBlogs h3{
+  margin-block: 3.1rem;
+  position: relative;
+  text-align: center;
+}
+.latestBlogs h3::before{
+transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    content: "";
+    width: 6.3rem;
+    border-radius: 0.5rem;
+    height: 0.2rem;
+    background-color: var(--lightGrey);
+    bottom: -0.9rem;
+  }
+/* Blog Posts Section => Blogs Cards   */
+.latestBlogs .blogCards{
+  gap: 1.6rem;
+}
+.latestBlogs .blogCards .blog-card{
+gap: 0.5rem;
+}
+.latestBlogs .blogCards .blog-card h5{
+  color: var(--grayText);
+  font-weight: 500;
+}
+.latestBlogs .blogCards .blog-card a{
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--mainClr);
+  font-weight: 600;
+  transition: all ease .3s;
+}
+.latestBlogs .blogCards .blog-card a:hover{
+  opacity: 0.9;
+}
+.latestBlogs .blogCards .blog-card a img{
+  width: 0.9rem;
+transform: translateY(0.1rem);
+}
+.latestBlogs .blogCards .blog-card h4{
+color: var(--darkFontClr);
+}
+/* MQ */
+@media (max-width: 768px) {
+  .latestBlogs h3::before{
+    display: none;
+  }
+  .latestBlogs .blogCards .blog-card{
+  grid-column:span 12;
+}
+.subscribe_features .features .cardTxt {
+padding-left: 0.8rem;
+}
+}
+@media (min-width: 769px) and (max-width:991px)  {
+.latestBlogs .blogCards .blog-card{
+  grid-column: span 6;
+}
+}
+@media (min-width: 992px)  {
+.latestBlogs .blogCards .blog-card{
+  grid-column:span  4;
+}
+}
+/******* - New Section - *******/
+/* *Signing Section */
+.signing {
+  text-align: center;
+  gap: 1.1rem;
+    margin-top: 1.6rem;
+    background-color: var(--lightMainClr);
+    padding: 3.3rem 0.5rem;
+}
+.signing span,h2{
+  color: var(--lightClr);
+  line-height: 1.5;
+  font-weight: bold;
+}
+.signing .sign-in_up-box{
+  gap: 0.8rem;
+}
+.signing .sign-in_up-box .repeatedBtn.blue{
+  background-color: var(--lightMainClr) !important;
+}
+/* MQ */
+@media (max-width: 767px) {
+ .signing .sign-in_up-box{
+  flex-direction: column;
+ }
+ .signing .sign-in_up-box{
+  flex-grow: 1;
+ }
+}
+@media (min-width: 768px) {
+  .signing {
+    align-items: center;
+  }
+}
+@media (min-width: 992px)  {
+.signing .sign-in_up-box .repeatedBtn.blue{
+  display: none;
+}
+}
+/******* - New Section - *******/
+/* *Footer */
+footer{
+  padding-top: 1.8rem;
+  color: var(--lightClr);
+  background-color: #151B28;
+}
+/* Footer => Main Footer Content   */
+footer .mainFooterContent{
+  gap: 1.1rem;
+}
+footer .mainFooterContent .submitBox .logo{
+  margin-bottom: 0.6rem;
+width: 11rem;
+}
+footer .mainFooterContent .submitBox span{
+  opacity: 0.5;
+  margin-bottom: 0.9rem;
+  line-height: 1.5;
+  max-width: 23rem;
+}
+footer .mainFooterContent .subscribeBox .repeatedBtn{
+    border-top-left-radius:unset;
+    border-bottom-left-radius: unset;
+}
+footer .mainFooterContent .subscribeBox .inputFieldHolder input{
+  background-color: var(--darkFontClr);
+     border-top-right-radius:unset;
+    border-bottom-right-radius: unset;
+}
+footer .mainFooterContent .col h3{
+  margin-bottom: 1.1rem;
+}
+footer .mainFooterContent .col a{
+  transition: .3s all ease;
+ position: relative;
+  color: #A5ACBA;
+  opacity: 0.5;
+  line-height: 2;
+}
+footer .mainFooterContent .col a:hover{
+ opacity: 1;
+}
+/* Footer => Rights */
+footer .container .rights{
+  padding-block: 1.3rem ;
+align-items: center;
+justify-content: center;
+  border-top: solid 0.1rem #A5ACBA;
+  margin-top: 1.1rem;
+   color: #A5ACBA;
+}
+/* MQ */
+@media (max-width: 767px) {
+   footer .mainFooterContent .submitBox{
+  grid-column: span 12;
+}
+ footer .mainFooterContent .col{
+  grid-column: span 6;
+ }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+       footer .mainFooterContent .submitBox{
+  grid-column: span 12;
+}
+ footer .mainFooterContent .col{
+  grid-column: span 4;
+ }
+}
+@media (min-width: 768px){
+  footer .mainFooterContent .col{
+justify-self: center;
+   }
+}
+@media (min-width: 992px) {
+     footer .mainFooterContent .submitBox{
+  grid-column: span 3;
+}
+ footer .mainFooterContent .col{
+  grid-column: span 3;
+ }
+}
+/******* - END - *******/
